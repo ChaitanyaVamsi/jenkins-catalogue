@@ -1,9 +1,11 @@
 pipeline{
-  agent{
-    node{
-      label 'any'
-    }
-  }
+
+  agent any
+  // agent{
+  //   node{
+  //     label 'any'
+  //   }
+  // }
 
   environment{
     COURSE = "Jenkins"
@@ -27,5 +29,15 @@ pipeline{
           }
         }
     }
+
+    stage('install dependencies'){
+      steps{
+        script{
+          npm install
+        }
+      }
+    }
+
+
   }
 }

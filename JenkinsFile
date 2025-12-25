@@ -11,6 +11,7 @@ pipeline{
     COURSE = "Jenkins"
     PROJECT = "roboshop"
     COMPONENT = "catalogue"
+    appVersion = ""
   }
 
   options{
@@ -24,7 +25,7 @@ pipeline{
         steps{
           script{
             def packageJSON = readJSON file: 'package.json'
-            appVersion= packageJSON.version
+            appVersion= packageJSON.version // this appVersion is defined in environment
             echo "app version: ${appVersion}"
           }
         }
@@ -33,7 +34,9 @@ pipeline{
     stage('install dependencies'){
       steps{
         script{
-          npm install
+          sh """
+             npm install
+          """
         }
       }
     }

@@ -17,7 +17,7 @@ pipeline{
   }
 
   stages{
-    // need a plugin gor this
+    // need a plugin for this
     stage ('Display Version'){
         steps{
           script{

@@ -24,3 +24,5 @@ apt install npm
 apt install openjdk-21-jre-headless
 apt install nodejs
 apt install docker.io
+
+## ecr

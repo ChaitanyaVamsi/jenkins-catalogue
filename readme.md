@@ -14,6 +14,7 @@ systemctl start jenkins
 
 stage view
 Pipeline Utility Steps
+sonarqube scanner
 
 ## agent - ubuntu
 
@@ -42,3 +43,19 @@ aws --version
 
 sudo usermod -aG docker ubuntu
 sudo systemctl restart docker
+
+## sonarqube docker
+
+docker run -d --name sonarqube \
+ -p 9000:9000 \
+ -e SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true \
+ sonarqube:community
+
+# docker
+
+yum install -y yum-utils
+yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+yum install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
+systemctl start docker
+systemctl enable docker
+usermod -aG docker ec2-user

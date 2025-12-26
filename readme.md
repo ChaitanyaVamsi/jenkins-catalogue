@@ -20,6 +20,7 @@ Pipeline Utility Steps
 apt-get update
 sudo apt update
 sudo apt install -y git
+apt install npm
 apt install openjdk-21-jre-headless
 apt install nodejs
 apt install docker.io

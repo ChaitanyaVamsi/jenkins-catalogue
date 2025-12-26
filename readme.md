@@ -25,4 +25,20 @@ apt install openjdk-21-jre-headless
 apt install nodejs
 apt install docker.io
 
-## ecr
+## ecr on slave
+
+---
+
+## if there is no aws cli on slave you get erro slave should have aws cli
+
+sudo apt update
+sudo apt install -y unzip curl
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
+aws --version
+
+## if image does not get pushed" permission denied" error
+
+sudo usermod -aG docker ubuntu
+sudo systemctl restart docker

@@ -1,4 +1,4 @@
-## sonarQube setup
+## sonarQube setup docker container
 
 sudo apt update
 sudo apt install docker.io

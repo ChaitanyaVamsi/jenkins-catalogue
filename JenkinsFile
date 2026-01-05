@@ -12,7 +12,7 @@ pipeline{
     PROJECT = "roboshop"
     COMPONENT = "catalogue"
     appVersion = ""
-    ACC_ID = "713169986769"
+    ACC_ID = "471112667143"
   }
 
   options{

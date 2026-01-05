@@ -153,6 +153,7 @@ pipeline{
                         --pkg-types os \
                         --exit-code 1 \
                         --format table \
+                        --no-progress \
                         ${ACC_ID}.dkr.ecr.us-east-1.amazonaws.com/${PROJECT}/${COMPONENT}:${appVersion}
           """
         }

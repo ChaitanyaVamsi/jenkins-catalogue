@@ -19,3 +19,7 @@ echo "deb [signed-by=/etc/apt/keyrings/jenkins-keyring.asc]" \
  /etc/apt/sources.list.d/jenkins.list > /dev/null
 sudo apt update
 sudo apt install jenkins
+
+### trivy
+
+curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sudo sh -s -- -b /usr/local/bin v0.68.2

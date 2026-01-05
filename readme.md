@@ -13,10 +13,14 @@ systemctl start jenkins
 ## plugins
 
 stage view
-Pipeline Utility Steps
+Pipeline Utility Steps - to read packagejson
 sonarqube scanner
+Aws steps
+ansicolor
 
 ## agent - ubuntu
+
+dnf install nodejs -y --- for reddhat
 
 apt-get update
 sudo apt update

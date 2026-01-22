@@ -10,6 +10,12 @@ systemctl daemon-reload
 systemctl enable jenkins
 systemctl start jenkins
 
+## Reset the failed systemd state and retry
+
+sudo systemctl reset-failed jenkins
+sudo systemctl start jenkins
+systemctl status jenkins
+
 ## plugins
 
 stage view

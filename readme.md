@@ -54,6 +54,9 @@ aws --version
 sudo usermod -aG docker ubuntu
 sudo systemctl restart docker
 
+sudo usermod -aG docker jenkins
+sudo systemctl restart jenkins
+
 ## sonarqube docker
 
 docker run -d --name sonarqube \

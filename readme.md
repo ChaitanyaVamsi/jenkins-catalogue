@@ -69,3 +69,40 @@ yum install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-co
 systemctl start docker
 systemctl enable docker
 usermod -aG docker ec2-user
+
+## ubuntu jenkins
+
+apt update
+
+sudo apt update
+sudo apt install fontconfig openjdk-21-jre
+java -version
+
+sudo wget -O /etc/apt/keyrings/jenkins-keyring.asc \
+ https://pkg.jenkins.io/debian-stable/jenkins.io-2026.key
+echo "deb [signed-by=/etc/apt/keyrings/jenkins-keyring.asc]" \
+ https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+ /etc/apt/sources.list.d/jenkins.list > /dev/null
+sudo apt update
+sudo apt install jenkins
+
+apt install npm
+apt install docker.io
+sudo usermod -aG docker ubuntu
+sudo systemctl restart docker
+
+#terraform
+yum install -y yum-utils
+yum-config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo
+yum -y install terraform
+
+#trivy
+curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sudo sh -s -- -b /usr/local/bin v0.68.2
+
+#aws cli
+sudo apt update
+sudo apt install -y unzip curl
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
+aws --version
